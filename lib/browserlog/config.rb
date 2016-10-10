@@ -8,7 +8,7 @@ module Browserlog
 
     def initialize
       @allow_production_logs = false
-      @allowed_log_files = %w(test development production)
+      @allowed_log_files = %w(test development staging production)
     end
   end
 end
