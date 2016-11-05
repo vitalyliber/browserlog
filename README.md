@@ -22,7 +22,7 @@ Browserlog is a live web log viewer for rails apps.
 The simplest way to install Browserlog is to use [Bundler](http://bundler.io).
 
 ```ruby
-gem 'browserlog', '~> 0.0.2'
+gem 'browserlog', '~> 0.0.3', git: 'https://github.com/vitalyliber/browserlog.git'
 ```
 
 Browserlog is bundled as a Rails engine. Mount it on `config/routes.rb`.
@@ -32,6 +32,15 @@ MyApp::Application.routes.draw do
   mount Browserlog::Engine => '/logs'
 end
 ```
+
+Using gem 'devise' for authentication lets protect logs page:
+
+```ruby
+  authenticate :user do
+    mount Browserlog::Engine => '/logs'
+  end
+```
+
 
 With this setup ``logs/development``, ``logs/staging``, ``logs/production`` and ``logs/test`` are automatically available on the browser.
 
